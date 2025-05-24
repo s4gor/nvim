@@ -2,6 +2,9 @@ require "core.keymaps"
 require "core.options"
 
 vim.opt.number = true
+vim.opt.autoindent = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -16,15 +19,8 @@ local rtp = vim.opt.rtp
 rtp:prepend(lazypath)
 
 require('lazy').setup({
-
-{
-  "nvim-neo-tree/neo-tree.nvim",
-  branch = "v3.x",
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-tree/nvim-web-devicons",  
-    "MunifTanjim/nui.nvim",
-  },
-}
-
+	require "plugins.neotree",
+	require "plugins.colortheme"
 })
+
+
