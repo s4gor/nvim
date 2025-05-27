@@ -17,7 +17,10 @@ vim.keymap.set({"n", "v"}, "<leader>c", function()
   end
 end, opts)
 
-vim.keymap.set("n", "<leader>p", '"+p', opts)
+
+vim.keymap.set("n", "<leader>p", function()
+  vim.cmd('normal! "+p')
+end, opts)
 
 vim.keymap.set({"n", "v"}, "<leader>x", function()
   if vim.fn.mode() == 'v' or vim.fn.mode() == 'V' then
