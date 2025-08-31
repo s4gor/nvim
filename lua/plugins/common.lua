@@ -11,8 +11,9 @@ return {
     build = ":TSUpdate",
     event = { "BufReadPost", "BufNewFile" },
     opts = {
-      ensure_installed = { "c", "cpp", "rust", 	"javascript", "typescript", "json",  "tsx", "jsdoc", "json","lua", "vim" },
+      ensure_installed = { "c", "cpp", "rust", 	"javascript", "typescript", "json",  "tsx", "jsdoc", "json", "lua", "jsx", "html", "css", "python" },
       highlight = { enable = true },
+			indent = { enable = true }
     },
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
@@ -48,6 +49,19 @@ return {
           { name = "luasnip" },
         },
       })
+    end,
+  },
+	{
+    "mattn/emmet-vim",
+    init = function()
+      vim.g.user_emmet_leader_key = '<C-e>'
+      vim.g.user_emmet_settings = {
+        javascript = { extends = 'jsx' },
+        javascriptreact = { extends = 'jsx' },
+        typescriptreact = { extends = 'jsx' },
+        eruby = { extends = 'html' },
+        django = { extends = 'html' },
+      }
     end,
   },
   {
