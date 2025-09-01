@@ -11,7 +11,7 @@ return {
     build = ":TSUpdate",
     event = { "BufReadPost", "BufNewFile" },
     opts = {
-      ensure_installed = { "c", "cpp", "rust", 	"javascript", "typescript", "json",  "tsx", "jsdoc", "json", "lua", "jsx", "html", "css", "python" },
+      ensure_installed = { "c", "cpp", "rust", 	"javascript", "typescript", "json",  "tsx", "jsdoc", "json", "lua", "html", "css", "python" },
       highlight = { enable = true },
 			indent = { enable = true }
     },
